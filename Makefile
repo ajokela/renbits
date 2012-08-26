@@ -1,10 +1,10 @@
 CFLAGS= -Wall
 
-default: test.c
-	gcc $(CFLAGS) test.c -o test
+default: renbits.c
+	gcc $(CFLAGS) renbits.c -o renbits
 
 run: default
-	./test
+	./renbits
 
 clean:
-	rm test
+	rm renbits
