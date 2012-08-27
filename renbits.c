@@ -58,7 +58,10 @@ void dec_to_bin(long n){
     }
     buff[i]= '\0';
 
-    printf("%40s -> %d-BIT integer: %ld\n", buff, num_of_bits, n);
+    printf("%40s -> %d-BIT integer: %ld", buff, num_of_bits, n);
+    if(n >= 0 && n <= 255)
+        printf(" char: %c", (int)n);
+    printf("\n");
     free(buff);
 }
 
@@ -140,9 +143,13 @@ int main(){
         num_of_args = sscanf(buff, "%ld %s %ld", &num1, word, &num2);
         //printf("sscanf read %d args:\n", num_of_args);
         //printf("num1: %ld, num2: %ld, word: '%s'\n", num1, num2, word);
-        puts("================================================================================");
-        run_bitwise_operation(word, num1, num2, num_of_args);
-        puts("================================================================================");
+        if(num_of_args > 0){
+            puts("================================================================================");
+            run_bitwise_operation(word, num1, num2, num_of_args);
+            puts("================================================================================");
+        }
+        else
+            puts("Invalid input");
     }
 
     return 0;
