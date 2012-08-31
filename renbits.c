@@ -116,14 +116,6 @@ void run_bitwise_operation(char *word, long num1,
     
 }
 
-int has_third_argument(){
-    char line[80];
-    fgets(line, 80, stdin);
-    printf("line: '%s'...", line);
-
-    return 1;
-}
-
 int main(){
     help();
     long num1 = 0;
